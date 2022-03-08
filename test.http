@@ -1,0 +1,46 @@
+GET http://localhost:3000/
+
+###
+POST http://localhost:3000/api/wilder/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "miou miou",
+    "city": "la peche",
+    "skills": [
+    {
+        "title": "testouille",
+        "votes": 10
+    }
+    ]
+}
+
+###
+
+GET http://localhost:3000/api/wilder/read
+
+###
+GET http://localhost:3000/api/wilder/read/622719d2a67b24a36a65dabb
+
+###
+PUT http://localhost:3000/api/wilder/update/622719d2a67b24a36a65dabb HTTP/1.1
+content-type: application/json
+
+{
+
+    "skills": [
+    {
+        "title": "test avec params id",
+        "votes": 10,
+        "_id": "622719d2a67b24a36a65dabc"
+    },
+    {
+        "title": "essai",
+        "votes": 4
+    }
+    ]
+}
+
+###
+
+DELETE http://localhost:3000/api/wilder/delete/62276cd20afdf95cdffae448 HTTP/1.1
